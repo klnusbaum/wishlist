@@ -1,4 +1,4 @@
-import WishListItemRow from "@/app/ui/wish-list-item";
+import WishListItemRow from "@/app/ui/wish-list-item-row";
 
 const items = [
     {
@@ -63,7 +63,7 @@ const items = [
 export default function Page() {
     return <div>
         {items.map((item) => (
-            <WishListItemRow item={item} />
+            <WishListItemRow key={item.id} item={item} />
         ))}
     </div>
 }
