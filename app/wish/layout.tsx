@@ -12,13 +12,14 @@ export default function Layout({
                     <h1 className="grow text-2xl p-2">Wishlist 🌠</h1>
                     <a href="/logout" className="bg-indigo-800 rounded p-2 text-sm">Logout</a>
                 </div>
-                <div className="flex justify-between items-center">
-                    <TabButton text="My List" href="/wish/list" />
-                    <TabButton text="Friend Lists" href="/wish/friends" />
-                    <TabButton text="Settings" href="/wish/settings" />
-                </div>
                 <div className="grow overflow-y-scroll">
                     {children}
+                </div>
+                <div className="flex justify-stretch items-stretch">
+                    <TabButton href="/wish/list">Wishes</TabButton>
+                    <TabButton href="/wish/friends">Friends</TabButton>
+                    <TabButton href="/wish/settings">⚙️</TabButton>
+                    <TabButton href="/wish/add">➕</TabButton>
                 </div>
             </div>
         </main>
