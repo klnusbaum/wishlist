@@ -1,74 +1,9 @@
 import WishListItemRow from "@/app/ui/wish-list-item-row";
-
-const items = [
-    {
-        id: "1",
-        userId: "1",
-        name: "flashlight",
-        price: 20,
-        url: "",
-        img_url: "",
-    },
-    {
-        id: "2",
-        userId: "1",
-        name: "tv",
-        price: 400,
-        url: "",
-        img_url: "",
-    },
-    {
-        id: "3",
-        userId: "1",
-        name: "radio",
-        price: 10,
-        url: "",
-        img_url: "",
-    },
-    {
-        id: "4",
-        userId: "1",
-        name: "dresser",
-        price: 200,
-        url: "",
-        img_url: "",
-    },
-    {
-        id: "5",
-        userId: "1",
-        name: "Lamp",
-        price: 100,
-        url: "",
-        img_url: "",
-    },
-    {
-        id: "6",
-        userId: "1",
-        name: "dresser",
-        price: 200,
-        url: "",
-        img_url: "",
-    },
-    {
-        id: "7",
-        userId: "1",
-        name: "dresser",
-        price: 200,
-        url: "",
-        img_url: "",
-    },
-    {
-        id: "8",
-        userId: "1",
-        name: "dresser",
-        price: 200,
-        url: "",
-        img_url: "",
-    },
-];
+import { fetchWishListItems } from "@/app/lib/data";
 
 
-export default function Page() {
+export default async function Page() {
+    const items = await fetchWishListItems('410544b2-4001-4271-9855-fec4b6a6442a');
     return <div>
         {items.map((item) => (
             <WishListItemRow key={item.id} item={item} />

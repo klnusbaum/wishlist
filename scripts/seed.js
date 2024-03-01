@@ -5,7 +5,7 @@ const users = [
     {
         id: '410544b2-4001-4271-9855-fec4b6a6442a',
         name: 'User',
-        email: 'user@nextmail.com',
+        email: 'test@test.com',
         password: '123456',
     },
 ];
@@ -74,7 +74,7 @@ async function seedUsers(client) {
         await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
         // Create the "users" table if it doesn't exist
         const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS users (
+      CREATE TABLE IF NOT EXISTS wishUsers (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         email TEXT NOT NULL UNIQUE,
@@ -89,7 +89,7 @@ async function seedUsers(client) {
             users.map(async (user) => {
                 const hashedPassword = await bcrypt.hash(user.password, 10);
                 return client.sql`
-        INSERT INTO users (id, name, email, password)
+        INSERT INTO wishUsers (id, name, email, password)
         VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword})
         ON CONFLICT (id) DO NOTHING;
       `;
@@ -119,7 +119,7 @@ async function seedWishListItems(client) {
         url TEXT NOT NULL,
         imgURL TEXT,
         price INT NOT NULL,
-        FOREIGN KEY (user_id) REFERNCES users(id)
+        FOREIGN KEY (userId) REFERENCES wishUsers(id)
       );
     `;
 
