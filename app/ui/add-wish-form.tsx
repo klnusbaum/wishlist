@@ -1,11 +1,11 @@
 'use client';
 
 import { useFormState } from 'react-dom';
-import { createWish } from '@/app/lib/actions';
+import { createWish, State } from '@/app/lib/actions';
 import Link from 'next/link';
 
 export default function WishForm() {
-    const initialState = { message: null, errors: {} };
+    const initialState: State = { message: null, errors: {} };
     const [state, dispatch] = useFormState(createWish, initialState);
     return (
         <form action={dispatch}>
