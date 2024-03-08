@@ -9,7 +9,7 @@ export default function WishForm() {
     const [state, dispatch] = useFormState(createWish, initialState);
     return (
         <form action={dispatch}>
-            <div className="rounded-md bg-slate-600 p-4 m-2 md:p-6">
+            <div className="rounded-md bg-slate-600 p-4 m-2 md:p-6 text-slate-300">
                 {/* Name */}
                 <div className="mb-4">
                     <label htmlFor="name" className="mb-2 block text-sm font-medium">
@@ -19,7 +19,7 @@ export default function WishForm() {
                         <input
                             id="name"
                             name="name"
-                            className="peer block w-full cursor-pointer rounded-md border py-2 pl-2 text-sm outline-2 bg-slate-600 placeholder:bg-slate-600"
+                            className="peer block w-full cursor-pointer rounded-md border border-slate-300 py-2 pl-2 text-sm outline-2 bg-slate-600 placeholder:bg-slate-600"
                             defaultValue=""
                             placeholder="My Item"
                             aria-describedby="name-error"
@@ -44,7 +44,7 @@ export default function WishForm() {
                         <input
                             id="url"
                             name="url"
-                            className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-2 text-sm outline-2 placeholder:text-gray-500"
+                            className="peer block w-full cursor-pointer rounded-md border border-slate-300 py-2 pl-2 text-sm outline-2 bg-slate-600 placeholder:bg-slate-600"
                             placeholder="https://www.example.com/product"
                             defaultValue=""
                             aria-describedby="url-error"
@@ -74,7 +74,7 @@ export default function WishForm() {
                                 type="number"
                                 step="0.01"
                                 placeholder="Enter USD amount"
-                                className="peer block w-full rounded-md border border-gray-200 py-2 pl-2 text-sm outline-2 placeholder:text-gray-500"
+                                className="peer block w-full cursor-pointer rounded-md border border-slate-300 py-2 pl-2 text-sm outline-2 bg-slate-600 placeholder:bg-slate-600"
                                 aria-describedby="price-error"
                             />
                         </div>

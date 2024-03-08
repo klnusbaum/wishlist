@@ -6,11 +6,12 @@ import { redirect } from 'next/navigation';
 import { insertWishListItem } from './data';
 
 const WishListItemSchema = z.object({
-    name: z.string(),
+    name: z.string().trim().min(4, { message: "Must be 4 or more characters" }),
     price: z.coerce
         .number()
+        .safe()
         .gt(0, { message: 'Please enter a price create than $0' }),
-    url: z.string(),
+    url: z.string().url(),
 });
 
 export type State = {
