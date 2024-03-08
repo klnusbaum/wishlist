@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.list-icon-size {
-    --ggs: 1.5;
-}
-
 body {
     background: #1e293b;
     color: #d1d5db;

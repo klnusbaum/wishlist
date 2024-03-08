@@ -1,4 +1,6 @@
 import { WishListItem } from "@/app/lib/definitions";
+import { CheckIcon } from '@heroicons/react/16/solid';
+
 
 export default function WishListItemRow({ item }: { item: WishListItem }) {
     return <div className="flex justify-between items-center">
@@ -7,7 +9,7 @@ export default function WishListItemRow({ item }: { item: WishListItem }) {
             <div className="text-lg">{item.name}</div>
             <div className="text-md">{formatPrice(item.price)}</div>
         </div>
-        <div className="bg-green-600 m-2 rounded size-12 md:size-16 grid justify-center items-center"><i className="gg-check-o list-icon-size"></i></div>
+        <CheckIcon className="bg-green-600 m-2 rounded size-12 md:size-16 grid justify-center items-center" />
     </div >
 }
 
