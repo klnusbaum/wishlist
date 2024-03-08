@@ -9,7 +9,7 @@ export default function WishListItemRow({ item }: { item: WishListItem }) {
             <div className="text-lg">{item.name}</div>
             <div className="text-md">{formatPrice(item.price)}</div>
         </div>
-        <CheckIcon className="bg-green-600 m-2 rounded size-12 md:size-16 grid justify-center items-center" />
+        <CheckIcon className="bg-green-600 m-2 rounded size-12 md:size-16" />
     </div >
 }
 

@@ -1,4 +1,5 @@
 import TabButton from '@/app/ui/tab-button';
+import { Cog6ToothIcon, PlusCircleIcon } from '@heroicons/react/16/solid';
 
 export default function Layout({
     children,
@@ -18,8 +19,8 @@ export default function Layout({
                 <div className="flex justify-stretch items-stretch">
                     <TabButton href="/wish/list">Wishes</TabButton>
                     <TabButton href="/wish/friends">Friends</TabButton>
-                    <TabButton href="/wish/settings">⚙️</TabButton>
-                    <TabButton href="/wish/add">➕</TabButton>
+                    <TabButton href="/wish/settings"><Cog6ToothIcon className="mx-auto size-6" /></TabButton>
+                    <TabButton href="/wish/add"><PlusCircleIcon className="mx-auto size-6" /></TabButton>
                 </div>
             </div>
         </main>
